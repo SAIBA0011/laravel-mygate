@@ -13,11 +13,10 @@ class MygateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/views', 'Mygate');
-
-        $this->publishes([
-            __DIR__ . '/migrations' => database_path('migrations')
-        ], 'migrations');
+        $this->publishMigrations();
+        $this->publishConfig();
+        $this->publishModels();
+        $this->loadViews();
     }
 
     /**
@@ -28,5 +27,43 @@ class MygateServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Publish Config File
+     */
+    private function publishConfig()
+    {
+        $this->publishes([
+            __DIR__ . '/config' => config_path('mygate.php')
+        ], 'config');
+    }
+
+    /**
+     * Publish Migrations
+     */
+    private function publishMigrations()
+    {
+        $this->publishes([
+            __DIR__ . '/migrations' => database_path('migrations')
+        ], 'migrations');
+    }
+
+    /**
+     * Publish Models
+     */
+    private function publishModels()
+    {
+        $this->publishes([
+            __DIR__ . '/models' => app_path('mygate')
+        ], 'models');
+    }
+
+    /**
+     * Load Views
+     */
+    private function loadViews()
+    {
+        $this->loadViewsFrom(__DIR__ . '/views', 'Mygate');
     }
 }
