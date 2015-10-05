@@ -35,7 +35,7 @@ class MygateServiceProvider extends ServiceProvider
     private function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/config' => config_path('mygate.php')
+            __DIR__ . '/config' => config_path('')
         ], 'config');
     }
 
