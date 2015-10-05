@@ -1,0 +1,44 @@
+{
+    "name": "gbotha/mygate",
+    "description": "Laravel Mygate Package",
+    "keywords": [
+        "mygate",
+        "laravel",
+        "laravel-mygate"
+    ],
+    "homepage": "https://github.com/thephpgbotha/mygate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gerhard Botha",
+            "email": "gerhardt@saiba.org.za",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gbotha\\Mygate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gbotha\\Mygate\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
